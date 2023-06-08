@@ -1,0 +1,24 @@
+//megaphone
+
+//create a function that converts
+//a string to uppercase
+//megaphone("Hello World")
+
+//function declaration
+//function getMegaphone(message) {
+  //  const outputSound = message.toUpperCase();
+    //return outputSound;
+
+//}
+
+
+//invoke function
+//const message = getMegaphone("Hey you guys!");
+//console.log(message);
+
+function getWhisper(message) {
+    const lowerMessage = message.toLowerCase();
+    return lowerMessage;
+}
+const myMessage = getWhisper("HELLO YOU GUYS");
+console.log(myMessage);
