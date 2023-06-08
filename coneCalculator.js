@@ -4,7 +4,7 @@
 //Formula: https://www.google.com/search?q=volume+of+a+cone
 
 function coneCalculator(radius, height) {
-    const volume = 1/3 * height * 3.14 * Math.pow(radius, 2);
+    const volume = (1/3 * height) * 3.14 * Math.pow(radius, 2);
     return volume;
 }
 
