@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add, Sort, and Reset Array</title>
+</head>
+<body>
+  <form id="myForm">
+    <input type="text" id="inputField">
+    <button type="submit">Add to Array</button>
+  </form>
+  
+  <button id="sortButton">Sort Array</button>
+  <button id="resetButton">Reset Array</button>
+
+  <ul id="arrayList"></ul>
+
+  <script>
+    const form = document.getElementById("myForm");
+    const inputField = document.getElementById("inputField");
+    const sortButton = document.getElementById("sortButton");
+    const resetButton = document.getElementById("resetButton");
+    const arrayList = document.getElementById("arrayList");
+    let items = [];
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      const inputValue = inputField.value.trim();//strips whitespace before and after a word
+
+      if (inputValue !== "") {
+        items.push(inputValue);
+        renderArray();//look at what the render array function does
+        inputField.value = "";
+      }
+    });
+
+    sortButton.addEventListener("click", function() {
+      items.sort();
+      renderArray();//look at what render array does
+    });
+
+    resetButton.addEventListener("click", function() {
+      items = [];//resets a populated array to an empty array
+      renderArray();//loo at what render array does
+    });
+
+    function renderArray() {
+      arrayList.innerHTML = "";
+
+      for (let i = 0; i < items.length; i++) {
+        const listItem = document.createElement("li");
+        listItem.textContent = items[i];
+        arrayList.appendChild(listItem);
+      }
+    }
+  </script>
+</body>
+</html>
